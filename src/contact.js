@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './contact.css'
-import { useAuth0 } from "@auth0/auth0-react";
+
 const Contact = () => {
-    const { loginWithRedirect, logout, user, isAuthenticated} = useAuth0();
+   
     const [users, setUser] = useState(
         {
             Name: '', Email: '', Subject: '', Message: ''
@@ -51,9 +51,9 @@ const Contact = () => {
                     <input type='text' name='Subject' value={users.Subject} placeholder='Enter Your Subject'  autoComplete='off' onChange={data}></input>
                     <textarea name='Message' value={users.Message} placeholder='Your Message'  autoComplete='off' onChange={data}></textarea>
                     {
-                        isAuthenticated ? 
+                       
                         <button type='submit' onClick={senddata}>send</button>
-                        : <button type='submit' onClick={() => loginWithRedirect()}>Login to Send</button>
+                       
                     }
                 </form>
             </div>
