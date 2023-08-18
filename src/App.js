@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import Nav from './nav'
 import Rout from './rout';
-import Auth0ProviderWrapper from './withAuth0';
 
 import {BrowserRouter} from 'react-router-dom';
 import Footer from './footer';
