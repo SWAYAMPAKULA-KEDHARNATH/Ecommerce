@@ -11,6 +11,12 @@ import './nav.css'
 const Nav = ({searchbtn}) => {
     const [search, setSearch] = useState()
     const { loginWithRedirect, logout, user, isAuthenticated} = useAuth0();
+    const handleSearchChange = (e) => {
+        setSearch(e.target.value);
+    };
+
+    const handleSearchClick = () => {
+        searchbtn(search);}
   return (
     <>
     <div className='free'>
@@ -25,8 +31,8 @@ const Nav = ({searchbtn}) => {
                 <img src='./img/logo.jpg' alt='logo'></img>
             </div>
             <div className='search_box'>
-                <input type='text' value={search} placeholder='Search Your Product...' autoComplete='off' onChange={(e) => setSearch(e.target.value)}></input>
-                <button onClick={() => searchbtn (search)}>Search</button>
+                <input type='text' value={search} placeholder='Search Your Product...' autoComplete='off' onChange={handleSearchChange}></input>
+                <button onClick={handleSearchClick}>Search</button>
             </div>
             <div className='icon'>
                 {
