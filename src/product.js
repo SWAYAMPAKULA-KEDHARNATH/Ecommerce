@@ -80,10 +80,9 @@ const Product = ({product, setProduct, detail, view, close, setClose, addtocart}
                                           <img src={curElm.Img} alt={curElm.Title}></img>
                                           <div className='icon'>
                                             {
-                                                isAuthenticated ? 
+                                               
                                                 <li onClick={() => addtocart (curElm)}><AiOutlineShoppingCart /></li>
-                                                :
-                                                <li onClick={() => loginWithRedirect()}><AiOutlineShoppingCart /></li>
+                                               
                                             }
                                             <li onClick={() => view (curElm)}><BsEye /></li>
                                             <li><AiOutlineHeart /></li>                                     
