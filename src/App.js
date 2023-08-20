@@ -16,7 +16,7 @@ const App = () => {
 const searchbtn=(searchText)=>{
       const update = Productdetail.filter((x) => 
       {
-         return x.Cat === searchText;
+        return x.Cat.toLowerCase().includes(searchText.toLowerCase())
       })
       setProduct(update);
   }
