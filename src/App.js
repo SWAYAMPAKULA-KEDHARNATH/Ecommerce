@@ -16,7 +16,7 @@ const App = () => {
 const searchbtn=(searchText)=>{
       const update = Productdetail.filter((x) => 
       {
-         return x.Cat === product;
+         return x.Cat === searchText;
       })
       setProduct(update);
   }
