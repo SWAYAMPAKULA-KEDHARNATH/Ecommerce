@@ -28,6 +28,27 @@ const App = () => {
     setClose(true)
   }
 
+   useEffect(() => {
+    try {
+      const cart1 = JSON.parse(localStorage.getItem('react-Ecommerce-app-data'));
+      if (cart1) {
+        setCart(cart1);
+       
+
+      }
+    } catch (error) {
+      console.error('Error retrieving cart data from localStorage:', error);
+    }
+  }, []);
+  
+  useEffect(() => {
+    try {
+     
+      localStorage.setItem('react-Ecommerce-app-data', JSON.stringify(cart));
+    } catch (error) {
+      console.error('Error storing cart data in localStorage:', error);
+    }
+  }, [cart]);
   // add to cart
   const addtocart = (product) => 
   {
