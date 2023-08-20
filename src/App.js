@@ -13,14 +13,15 @@ const App = () => {
   const [detail, setDetail] = useState([])
   //filter product
   const [product, setProduct] = useState(Productdetail)
-  const searchbtn = (product) => 
-  {
-    const change = Productdetail.filter((x) => 
-    {
-      return x.Cat === product
-    })
-    setProduct(change)
-  }
+ const searchbtn = (searchTerm) => {
+    const change = Productdetail.filter((product1) => {
+      if (product1.Cat && product1.Cat.toLowerCase()) {
+        return product1.Cat.toLowerCase().includes(searchTerm.toLowerCase());
+      }
+      return false;
+    });
+    setProduct(change);
+  };
   //product detail
   const view = (product) => 
   {
